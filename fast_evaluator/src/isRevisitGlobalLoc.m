@@ -1,6 +1,6 @@
 function [is_revisit, min_dist] = isRevisitGlobalLoc(query_pose, db_poses, thres)
 
-num_dbs = length(db_poses);
+num_dbs = size(db_poses, 1);  % num_dbs = length(db_poses); this will get 2 when db_poses size is (1,2); MATLAB R2017b
 
 dists = zeros(1, num_dbs);
 for ii=1:num_dbs
