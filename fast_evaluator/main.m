@@ -10,7 +10,7 @@ global data_path;
 %   l- 00.csv (gt pose)
 %   l- velodyne
 %      l- <0xxxx.bin>
-data_path = '/media/gskim/Data/KITTI odo/data_odometry_velodyne/dataset/sequences/00/';
+data_path = '/media/data/kitti/odometry/dataset/sequences/00/';
 
 
 down_shape = [40, 120];
@@ -53,7 +53,7 @@ exp_ringkeys = [];
 exp_scancontexts = {};
 
 num_queries = length(data_poses);
-for query_idx = 1:num_queries - 1
+for query_idx = 1:num_queries - 1 % 1:num_queries - 1
         
     % save to (online) DB
     query_sc = data_scancontexts{query_idx};
@@ -137,7 +137,7 @@ end
 
 
 %% save the log 
-savePath = strcat("pr_result/within ", num2str(revisit_criteria), "m/");
+savePath = strcat('pr_result/within ', num2str(revisit_criteria), 'm/'); % " -> '
 if((~7==exist(savePath,'dir')))
     mkdir(savePath);
 end
